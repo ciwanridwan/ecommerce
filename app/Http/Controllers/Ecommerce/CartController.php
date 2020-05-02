@@ -62,7 +62,6 @@ class CartController extends Controller
 
     public function updateCart(Request $request)
     {
-        // $carts = json_decode(request()->cookie('dw-carts'), true);
         $carts = $this->getCarts();
         foreach ($request->product_id as $key => $row) {
             if ($request->qty[$key] == 0) {

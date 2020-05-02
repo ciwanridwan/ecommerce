@@ -1,7 +1,7 @@
 @extends('layouts.ecommerce')
 
 @section('title')
-    <title>Login - DW Ecommerce</title>
+    <title>Login</title>
 @endsection
 
 @section('content')
@@ -53,6 +53,7 @@
 							<div class="col-md-12 form-group">
 								<button type="submit" value="submit" class="btn submit_btn">Log In</button>
 								<a href="#">Forgot Password?</a>
+								<a href="{{route ('customer.register')}}">Register</a>
 							</div>
 						</form>
 					</div>

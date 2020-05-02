@@ -1,41 +1,41 @@
 @extends('layouts.ecommerce')
 
 @section('title')
-    <title>Pengaturan - DW Ecommerce</title>
+    <title>Pengaturan</title>
 @endsection
 
 @section('content')
     <!--================Home Banner Area =================-->
-	<section class="banner_area">
-		<div class="banner_inner d-flex align-items-center">
-			<div class="container">
-				<div class="banner_content text-center">
-					<h2>Pengaturan</h2>
-					<div class="page_link">
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="container">
+                <div class="banner_content text-center">
+                    <h2>Pengaturan</h2>
+                    <div class="page_link">
                         <a href="{{ url('/') }}">Home</a>
                         <a href="{{ route('customer.settingForm') }}">Pengaturan</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--================End Home Banner Area =================-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Home Banner Area =================-->
 
-	<!--================Login Box Area =================-->
-	<section class="login_box_area p_120">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					@include('layouts.ecommerce.module.sidebar')
-				</div>
-				<div class="col-md-9">
+    <!--================Login Box Area =================-->
+    <section class="login_box_area p_120">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    @include('layouts.ecommerce.module.sidebar')
+                </div>
+                <div class="col-md-9">
                     <div class="row">
-						<div class="col-md-12">
-							<div class="card">
+                        <div class="col-md-12">
+                            <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title">Informasi Pribadi</h4>
                                 </div>
-								<div class="card-body">
+                                <div class="card-body">
                                     @if (session('success'))
                                         <div class="alert alert-success">{{ session('success') }}</div>
                                     @endif
@@ -94,14 +94,14 @@
                                         </div>
                                         <button class="btn btn-primary btn-sm">Simpan</button>
                                     </form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
 
 

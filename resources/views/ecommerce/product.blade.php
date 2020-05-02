@@ -1,12 +1,13 @@
 @extends('layouts.ecommerce')
 
 @section('title')
-    <title>Jual Produk Fashion - DW Ecommerce</title>
+    <title>Jual Produk Fashion</title>
 @endsection
+
 
 @section('content')
     <!--================Home Banner Area =================-->
-	<section class="banner_area">
+    <section class="banner_area">
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">

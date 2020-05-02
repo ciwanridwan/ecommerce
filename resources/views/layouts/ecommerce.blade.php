@@ -33,7 +33,11 @@
 			color: black
 		}
 	</style>
+	<script type="text/javascript">
+		$('#filter').on('click',function(){});
+	</script>
 	@yield('css')
+	@yield('css2')
 </head>
 
 <body>
@@ -81,13 +85,13 @@
 								<ul class="nav navbar-nav navbar-right right_nav pull-right">
 									<hr>
 									<li class="nav-item">
-										<a href="#" class="icons">
+										<a href="" class="icons" id="filter">
 											<i class="fa fa-search" aria-hidden="true"></i>
 										</a>
 									</li>
 									<hr>
 									<li class="nav-item">
-										<a href="#" class="icons">
+										<a href="{{ route ('customer.dashboard')}}" class="icons">
 											<i class="fa fa-user" aria-hidden="true"></i>
 										</a>
 									</li>
@@ -256,5 +260,6 @@
 	<script src="{{ asset('ecommerce/js/theme.js') }}"></script>
 
 	@yield('js')
+	@yield('js3')
 </body>
 </html>

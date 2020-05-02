@@ -2,39 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
 use Illuminate\Http\Request;
+use App\Category;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-       $category = Category::with(['parent'])->orderBy('created_at', 'DESC')->paginate(10);
-       $parent = Category::getParent()->orderBy('name', 'ASC')->get();
-       return view('categories.index', compact('category', 'parent'));
+        $category = Category::with(['parent'])->orderBy('created_at', 'DESC')->paginate(10);
+        $parent = Category::getParent()->orderBy('name', 'ASC')->get();
+        return view('categories.index', compact('category', 'parent'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -46,23 +25,6 @@ class CategoryController extends Controller
         return redirect(route('category.index'))->with(['success' => 'Kategori Baru Ditambahkan!']);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $category = Category::find($id);
@@ -70,13 +32,6 @@ class CategoryController extends Controller
         return view('categories.edit', compact('category', 'parent'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
@@ -91,15 +46,8 @@ class CategoryController extends Controller
         return redirect(route('category.index'))->with(['success' => 'Kategori Diperbaharui!']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
         $category = Category::withCount(['child', 'product'])->find($id);
         if ($category->child_count == 0 && $category->product_count == 0) {
             $category->delete();

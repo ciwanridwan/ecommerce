@@ -70,4 +70,25 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    public function storeRegister(Request $request)
+    {
+        $this->validate($request [
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'password' => 'required',
+            'phone_number' => 'required|digits_between:11,12',
+            'address' => 'required|string',
+            'district_id' => 'required|integer'
+
+        ]);
+
+        $customers = Customer::create();
+        if (auth()->guard('customer')->create($customers)) {
+            return redirect()->intended(route('customer.dashboard'));
+        }
+
+        // return redirect(route('customer.dashboard'))->with('success', 'Selamat data berhasil ditambah!');
+        return redirect()->back()->with(['maaf' => 'Harus diisi semua formnya']);
+    }
 }

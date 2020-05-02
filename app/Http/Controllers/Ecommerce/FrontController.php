@@ -9,6 +9,8 @@ use App\Category;
 use App\Customer;
 use App\Province;
 use App\Order;
+use App\City;
+Use App\District;
 
 class FrontController extends Controller
 {
@@ -21,7 +23,6 @@ class FrontController extends Controller
     public function product()
     {
         $products = Product::orderBy('created_at', 'DESC')->paginate(12);
-        // $categories = Category::with(['child'])->withCount(['child'])->getParent()->orderBy('name', 'ASC')->get();
         return view('ecommerce.product', compact('products'));
     }
 

@@ -6,14 +6,14 @@
         <a class="nav-link" href="{{ route('front.product') }}">Produk</a>
     </li>
     <li class="nav-item submenu dropdown">
-        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
+        <a href="{{ route('front.list_cart') }}" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
         <ul class="dropdown-menu">
             <li class="nav-item">
-                <a class="nav-link" href="category.html">Shop Category</a>
+                <a class="nav-link" href="{{ route ('category')}}">Shop Category</a>
             </li>
         </ul>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="{{ route ('contact')}}">Contact</a>
     </li>
 </ul>

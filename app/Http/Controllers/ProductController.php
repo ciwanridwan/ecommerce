@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use File;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Product;
 use App\Category;
+use File;
 use App\Jobs\ProductJob;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -21,13 +21,13 @@ class ProductController extends Controller
         return view('products.index', compact('product'));
     }
 
-     public function create()
+    public function create()
     {
         $category = Category::orderBy('name', 'DESC')->get();
         return view('products.create', compact('category'));
     }
 
-     public function store(Request $request)
+    public function store(Request $request)
     {
         $this->validate($request, [
             'name' => 'required|string|max:100',
