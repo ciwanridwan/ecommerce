@@ -84,341 +84,111 @@
             <!-- card one -->
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                 <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-product mb-60">
-                            <div class="product-img">
-                                <img src="style/img/categori/product1.png" alt="">
-                                <div class="new-product">
-                                    <span>New</span>
-                                </div>
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-ratting">
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                </div>
-                                <h4><a href="#">Green Dress with details</a></h4>
-                                <div class="price">
-                                    <ul>
-                                        <li>$40.00</li>
-                                        <li class="discount">$60.00</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-product mb-60">
-                            <div class="product-img">
-                                <img src="style/img/categori/product2.png" alt="">
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-ratting">
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                </div>
-                                <h4><a href="#">Green Dress with details</a></h4>
-                                <div class="price">
-                                    <ul>
-                                        <li>$40.00</li>
-                                        <li class="discount">$60.00</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-product mb-60">
-                            <div class="product-img">
-                                <img src="style/img/categori/product3.png" alt="">
-                                <div class="new-product">
-                                    <span>New</span>
-                                </div>
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-ratting">
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                </div>
-                                <h4><a href="#">Green Dress with details</a></h4>
-                                <div class="price">
-                                    <ul>
-                                        <li>$40.00</li>
-                                        <li class="discount">$60.00</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     @forelse ($products as $row)
-                        <div class="col-lg-3 col-md-3 col-sm-6">
-                            <div class="f_p_item">
-                                <div class="f_p_img">
-                                    <img class="img-fluid" src="{{ asset('storage/products/' . $row->image) }}" alt="{{ $row->name }}">
-                                    <div class="p_icon">
-                                        <a href="{{ url('/product/' . $row->slug) }}">
-                                            <i class="lnr lnr-cart"></i>
-                                        </a>
-                                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="f_p_item">
+                            <div class="f_p_img">
+                                <img class="img-fluid" src="{{ asset('storage/products/' . $row->image) }}" alt="{{ $row->name }}">
+                                <div class="p_icon">
+                                    <a href="{{ url('/product/' . $row->slug) }}">
+                                        <i class="lnr lnr-cart"></i>
+                                    </a>
                                 </div>
-                                <a href="{{ url('/product/' . $row->slug) }}">
-                                    <h4>{{ $row->name }}</h4>
-                                </a>
-                                <h5>Rp {{ number_format($row->price) }}</h5>
                             </div>
+                            <a href="{{ url('/product/' . $row->slug) }}">
+                                <h4>{{ $row->name }}</h4>
+                            </a>
+                            <h5>Rp {{ number_format($row->price) }}</h5>
                         </div>
+                    </div>
                     @empty
-                        <div class="col-md-12">
-                            <h3 class="text-center">Tidak ada produk</h3>
-                        </div>
-                        @endforelse
+                    <div class="col-md-12">
+                        <h3 class="text-center">Tidak ada produk</h3>
+                    </div>
+                    @endforelse
                 </div>
             </div>
             <!-- Card two -->
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                 <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-product mb-60">
-                            <div class="product-img">
-                                <img src="style/img/categori/product4.png" alt="">
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-ratting">
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                </div>
-                                <h4><a href="#">Green Dress with details</a></h4>
-                                <div class="price">
-                                    <ul>
-                                        <li>$40.00</li>
-                                        <li class="discount">$60.00</li>
-                                    </ul>
+                    @forelse ($products as $row)
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="f_p_item">
+                            <div class="f_p_img">
+                                <img class="img-fluid" src="{{ asset('storage/products/' . $row->image) }}" alt="{{ $row->name }}">
+                                <div class="p_icon">
+                                    <a href="{{ url('/product/' . $row->slug) }}">
+                                        <i class="lnr lnr-cart"></i>
+                                    </a>
                                 </div>
                             </div>
+                            <a href="{{ url('/product/' . $row->slug) }}">
+                                <h4>{{ $row->name }}</h4>
+                            </a>
+                            <h5>Rp {{ number_format($row->price) }}</h5>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-product mb-60">
-                            <div class="product-img">
-                                <img src="style/img/categori/product5.png" alt="">
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-ratting">
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                </div>
-                                <h4><a href="#">Green Dress with details</a></h4>
-                                <div class="price">
-                                    <ul>
-                                        <li>$40.00</li>
-                                        <li class="discount">$60.00</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    @empty
+                    <div class="col-md-12">
+                        <h3 class="text-center">Tidak ada produk</h3>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-product mb-60">
-                            <div class="product-img">
-                                <img src="style/img/categori/product6.png" alt="">
-                                <div class="new-product">
-                                    <span>New</span>
-                                </div>
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-ratting">
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                </div>
-                                <h4><a href="#">Green Dress with details</a></h4>
-                                <div class="price">
-                                    <ul>
-                                        <li>$40.00</li>
-                                        <li class="discount">$60.00</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforelse
                 </div>
             </div>
             <!-- Card three -->
             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                 <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-product mb-60">
-                            <div class="product-img">
-                                <img src="style/img/categori/product2.png" alt="">
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-ratting">
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                </div>
-                                <h4><a href="#">Green Dress with details</a></h4>
-                                <div class="price">
-                                    <ul>
-                                        <li>$40.00</li>
-                                        <li class="discount">$60.00</li>
-                                    </ul>
+                    @forelse ($products as $row)
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="f_p_item">
+                            <div class="f_p_img">
+                                <img class="img-fluid" src="{{ asset('storage/products/' . $row->image) }}" alt="{{ $row->name }}">
+                                <div class="p_icon">
+                                    <a href="{{ url('/product/' . $row->slug) }}">
+                                        <i class="lnr lnr-cart"></i>
+                                    </a>
                                 </div>
                             </div>
-                        </div>
-                    </div> 
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-product mb-60">
-                            <div class="product-img">
-                                <img src="style/img/categori/product3.png" alt="">
-                                <div class="new-product">
-                                    <span>New</span>
-                                </div>
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-ratting">
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                </div>
-                                <h4><a href="#">Green Dress with details</a></h4>
-                                <div class="price">
-                                    <ul>
-                                        <li>$40.00</li>
-                                        <li class="discount">$60.00</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <a href="{{ url('/product/' . $row->slug) }}">
+                                <h4>{{ $row->name }}</h4>
+                            </a>
+                            <h5>Rp {{ number_format($row->price) }}</h5>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-product mb-60">
-                            <div class="product-img">
-                                <img src="style/img/categori/product1.png" alt="">
-                                <div class="new-product">
-                                    <span>New</span>
-                                </div>
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-ratting">
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                </div>
-                                <h4><a href="#">Green Dress with details</a></h4>
-                                <div class="price">
-                                    <ul>
-                                        <li>$40.00</li>
-                                        <li class="discount">$60.00</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    @empty
+                    <div class="col-md-12">
+                        <h3 class="text-center">Tidak ada produk</h3>
                     </div>
+                    @endforelse
                     
                 </div>
             </div>
             <!-- card foure -->
             <div class="tab-pane fade" id="nav-last" role="tabpanel" aria-labelledby="nav-last-tab">
                 <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-product mb-60">
-                            <div class="product-img">
-                                <img src="style/img/categori/product1.png" alt="">
-                                <div class="new-product">
-                                    <span>New</span>
+                    @forelse ($products as $row)
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="f_p_item">
+                            <div class="f_p_img">
+                                <img class="img-fluid" src="{{ asset('storage/products/' . $row->image) }}" alt="{{ $row->name }}">
+                                <div class="p_icon">
+                                    <a href="{{ url('/product/' . $row->slug) }}">
+                                        <i class="lnr lnr-cart"></i>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="product-caption">
-                                <div class="product-ratting">
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                </div>
-                                <h4><a href="#">Green Dress with details</a></h4>
-                                <div class="price">
-                                    <ul>
-                                        <li>$40.00</li>
-                                        <li class="discount">$60.00</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <a href="{{ url('/product/' . $row->slug) }}">
+                                <h4>{{ $row->name }}</h4>
+                            </a>
+                            <h5>Rp {{ number_format($row->price) }}</h5>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-product mb-60">
-                            <div class="product-img">
-                                <img src="style/img/categori/product2.png" alt="">
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-ratting">
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                </div>
-                                <h4><a href="#">Green Dress with details</a></h4>
-                                <div class="price">
-                                    <ul>
-                                        <li>$40.00</li>
-                                        <li class="discount">$60.00</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-product mb-60">
-                            <div class="product-img">
-                                <img src="style/img/categori/product3.png" alt="">
-                                <div class="new-product">
-                                    <span>New</span>
-                                </div>
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-ratting">
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                    <i class="far fa-star low-star"></i>
-                                </div>
-                                <h4><a href="#">Green Dress with details</a></h4>
-                                <div class="price">
-                                    <ul>
-                                        <li>$40.00</li>
-                                        <li class="discount">$60.00</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    @empty
+                    <div class="col-md-12">
+                        <h3 class="text-center">Tidak ada produk</h3>
                     </div>
+                    @endforelse
                     
                 </div>
             </div>
