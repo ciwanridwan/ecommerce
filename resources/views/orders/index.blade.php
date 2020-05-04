@@ -62,7 +62,7 @@
                                         <tr>
                                             <td><strong>{{ $row->invoice }}</strong></td>
                                             <td>
-                                                <strong>{{ $row->customer_name }}</strong><br>
+                                                <label><strong>Nama:</strong> {{ $row->customer_name }} </label><br>
                                                 <label><strong>Telp:</strong> {{ $row->customer_phone }}</label><br>
                                                 <label><strong>Alamat:</strong> {{ $row->customer_address }} {{ $row->customer->district->name }} - {{  $row->customer->district->city->name}}, {{ $row->customer->district->city->province->name }}</label>
                                             </td>
@@ -71,7 +71,7 @@
                                             <td>
                                                 {!! $row->status_label !!} <br>
                                                 @if ($row->return_count > 0)
-                                                    <a href="{{ route('orders.return', $row->invoice) }}">Permintaan Return</a>
+                                                    <a href="{{ route('orders.return', $row->invoice) }}" style="color:red;">Permintaan Return</a>
                                                 @endif
                                             </td>
                                             <td>

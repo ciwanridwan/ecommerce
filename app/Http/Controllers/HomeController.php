@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Order;
 use App\Product;
 use Carbon\Carbon;
+use App\Payment;
+use App\Customer;
 use PDF;
 
 class HomeController extends Controller
@@ -28,7 +30,11 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('home');
+        $payments = Payment::sum('amount');
+        $products = Product::all()->count();
+        $customers = Customer::all()->count();
+        $orders = Order::selectRaw('COALESCE(sum(CASE WHEN status = 0 THEN subtotal END), 0) as pending')->count();
+        return view('home', compact('products', 'payments', 'customers', 'orders'));
     }
 
     public function orderReport()

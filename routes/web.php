@@ -30,6 +30,7 @@ Route::get('/product/ref/{user}/{product}', 'Ecommerce\FrontController@referalPr
 Route::get('verify/{token}', 'FrontController@verifyCustomerRegistration')->name('customer.verify');
 Route::get('/api/city/', 'Ecommerce\CartController@getCity');
 Route::get('/api/district/', 'Ecommerce\CartController@getDistrict');
+Route::get('email', 'HomeController@email');
 
 Route::group(['prefix' => 'member', 'namespace' => 'Ecommerce'], function() {
     Route::get('register', 'LoginController@register')->name('customer.register');

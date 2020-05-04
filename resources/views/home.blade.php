@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    <title>Dashboard</title>
+<title>Dashboard</title>
 @endsection
 
 @section('content')
@@ -24,28 +24,31 @@
                                     <div class="callout callout-info">
                                         <small class="text-muted">Omset Harian</small>
                                         <br>
-                                        <strong class="h4">Rp 0</strong>
+                                        <strong class="h4">Rp {{ $payments }}</strong>
                                     </div>
                                 </div>
+
                                 <div class="col-md-3">
                                     <div class="callout callout-danger">
                                         <small class="text-muted">Pelanggan Baru (H-7)</small>
                                         <br>
-                                        <strong class="h4">0</strong>
+                                        <strong class="h4"> {{ $customers }} </strong>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="callout callout-primary">
                                         <small class="text-muted">Perlu Dikirim</small>
                                         <br>
-                                        <strong class="h4">0</strong>
+                                        <strong class="h4"> {{ $orders }} </strong>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="callout callout-success">
+                                        
                                         <small class="text-muted">Total Produk</small>
                                         <br>
-                                        <strong class="h4">0</strong>
+                                        <strong class="h4"> {{ $products }}</strong>
+                                        
                                     </div>
                                 </div>
                             </div>
