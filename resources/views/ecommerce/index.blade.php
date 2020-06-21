@@ -6,7 +6,7 @@
 
 @section('content')
     <!--================Home Banner Area =================-->
-	<section class="home_banner_area">
+	<!-- <section class="home_banner_area">
 		<div class="overlay"></div>
 		<div class="banner_inner d-flex align-items-center">
 			<div class="container">
@@ -21,7 +21,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!--================End Home Banner Area =================-->
 
 	<!--================Hot Deals Area =================-->
