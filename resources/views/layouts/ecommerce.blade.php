@@ -49,7 +49,7 @@
 					<p>Call Us: 012 44 5698 7456 896</p>
 				</div> -->
 				<div class="float-right">
-					<ul class="right_side">
+					<!-- <ul class="right_side">
 						@if (auth()->guard('customer')->check())
 							<li><a href="{{ route('customer.logout') }}">Logout</a></li>
 						@else
@@ -57,7 +57,7 @@
 						@endif
 						<li><a href="{{ route('customer.dashboard') }}">My Account</a></li>
 						<li><a href="contact.html">Contact Us</a></li>
-					</ul>
+					</ul> -->
 				</div>
 			</div>
 		</div>
